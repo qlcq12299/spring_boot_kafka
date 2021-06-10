@@ -47,18 +47,10 @@ public class DealRecordProducerServiceImpl implements IDealRecordProducerService
         }
         br.close();
 
-        String json = JSON.toJSONString(sf);
+        kafkaTemplate.send("user-record1", JSON.toJSON(sf));
 
-        kafkaTemplate.send("user-record1", JSON.toJSONString(sf));
+        kafkaTemplate.send("user-record2", JSON.toJSON(sf));
 
-        kafkaTemplate.send("user-record2", JSON.toJSONString(sf));
 
-        //创建新文件,使用本地磁盘路径
-        File txtToJson = new File("D:\\test1.txt");
-        txtToJson.createNewFile();
-        BufferedWriter out = new BufferedWriter(new FileWriter(txtToJson));
-        out.write(json);
-        out.flush(); // 把缓存区内容压入文件
-        out.close(); // 最后记得关闭文件/*
     }
 }
