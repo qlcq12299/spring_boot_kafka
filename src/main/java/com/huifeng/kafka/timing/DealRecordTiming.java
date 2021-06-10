@@ -1,6 +1,6 @@
-package com.huifeng.kafka.consumer.transaction.log.timing;
+package com.huifeng.kafka.timing;
 
-import com.huifeng.kafka.consumer.transaction.log.service.IDealRecordProducerService;
+import com.huifeng.kafka.service.IDealRecordProducerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;

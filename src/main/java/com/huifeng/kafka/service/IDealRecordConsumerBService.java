@@ -1,7 +1,7 @@
-package com.huifeng.kafka.consumer.transaction.log.service;
+package com.huifeng.kafka.service;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 
-public interface IDealRecordConsumerAService {
+public interface IDealRecordConsumerBService {
      void consumer(ConsumerRecord<?,?> consumerRecord);
 }

@@ -1,6 +1,6 @@
-package com.huifeng.kafka.consumer.transaction.log.service.impl;
+package com.huifeng.kafka.service.impl;
 
-import com.huifeng.kafka.consumer.transaction.log.service.IDealRecordConsumerBService;
+import com.huifeng.kafka.service.IDealRecordConsumerAService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -16,9 +16,9 @@ import java.util.Optional;
 
 @Service
 @Slf4j
-public class DealRecordConsumerBServiceImpl implements IDealRecordConsumerBService {
+public class DealRecordConsumerAServiceImpl implements IDealRecordConsumerAService {
 
-    @KafkaListener(topics ="user-record2")
+    @KafkaListener(topics ="user-record1")
 
     @Override
     public void consumer(ConsumerRecord<?, ?> consumerRecord) {
@@ -26,7 +26,7 @@ public class DealRecordConsumerBServiceImpl implements IDealRecordConsumerBServi
         Optional<?> kafkaMessage = Optional.ofNullable(consumerRecord.value());
         if(kafkaMessage.isPresent()){
             Object message = kafkaMessage.get();
-            System.err.println("消费消息2:"+message);
+            System.err.println("消费消息1:"+message);
         }
     }
 }

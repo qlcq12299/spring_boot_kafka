@@ -1,4 +1,4 @@
-package com.huifeng.kafka.consumer.transaction.log;
+package com.huifeng.kafka;
 
 
 import org.springframework.boot.SpringApplication;

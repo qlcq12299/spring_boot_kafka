@@ -1,4 +1,4 @@
-package com.huifeng.kafka.consumer.transaction.log.pojo;
+package com.huifeng.kafka.pojo;
 
 import lombok.Data;
 
